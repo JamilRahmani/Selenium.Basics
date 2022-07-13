@@ -25,10 +25,10 @@ public class FindElementAndFindElements {
 		// we need to store them in list
 		// we need to iterate through each index of list and get its text.
 		
-		List <WebElement> links = driver.findElements(By.tagName("a"));
-		System.out.println(links.size());
+		List <WebElement> allLinks = driver.findElements(By.tagName("a"));
+		System.out.println(allLinks.size());
 		
-		for (WebElement link: links) {
+		for (WebElement link: allLinks) {
 			System.out.println(link.getText());
 		}
 		

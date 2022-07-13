@@ -22,6 +22,7 @@ public class HPractice {
 		email.sendKeys("jamil123rahmani@yahoo.com");
 		password.sendKeys("Jamiljan1");
 		login.click();
+		UtilityClass.screenShot(driver, "ecommerce");
 		
 	}
 

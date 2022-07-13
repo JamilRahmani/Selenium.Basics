@@ -50,7 +50,11 @@ public class WindowHandling {
 		search.sendKeys("Book");
 		UtilityClass.screenShot(driver, "ChildWindow");
 		
-		driver.close();
+		driver.switchTo().window(parentWindowID);
+		
+		driver.navigate().to("https://www.facebook.com/login/");
+		
+		//driver.close();
 		
 		
 		

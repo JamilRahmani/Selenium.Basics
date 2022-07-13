@@ -17,7 +17,7 @@ public class NavigationCommands {
 		// Difference between driver.get and driver.navigate
 		//you can open a page with both .get() and .navigate().to()
 		// .get() will wait until page is displayed
-		//.navigate().to() will not wait until page is displayed
+		//.navigate().to() will not wait until page is displayed it will go to the next step
 		
 		driver.navigate().to("http://tek-school.com/retail/");
 		Thread.sleep(5000);

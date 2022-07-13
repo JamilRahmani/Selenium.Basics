@@ -11,7 +11,7 @@ public class IframeHandling {
 
 	public static void main(String[] args) {
 
-
+		
 		System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
 		
 		WebDriver driver = new ChromeDriver();
@@ -24,8 +24,25 @@ public class IframeHandling {
 		WebElement packageListFrame = driver.findElement(By.xpath("//iframe[@name ='packageListFrame']"));
 		driver.switchTo().frame(packageListFrame);
 		
+		WebElement clik = driver.findElement(By.xpath("//a[text()='org.openqa.selenium']"));
+		clik.click();
+		
 		String value =driver.findElement(By.xpath("//a[text()='org.openqa.selenium' and @target = 'packageFrame']")).getText();
 		System.out.println(value);
+		
+		// When ever we want to switch from one frame to another, First we need to  switch to
+		//defaultcontent then we can go to the next frame. Below is the method
+		driver.switchTo().defaultContent();
+		
+		WebElement packageListFrame1 = driver.findElement(By.xpath("//iframe[@title='Package, class and interface descriptions']"));
+		driver.switchTo().frame(packageListFrame1);
+		//driver.switchTo().alert().accept();
+		
+		WebElement clik2 = driver.findElement(By.xpath("//a[text()='org.openqa.selenium']"));
+		clik2.click();
+		
+		
+		
 		
 		
 		

@@ -27,13 +27,11 @@ public class MP3Players {
 		Thread.sleep(3000);
 		
 		WebElement sortBy = driver.findElement(By.id("input-sort"));
-		
 		Select select = new Select(sortBy);
-		
 		select.selectByVisibleText("Rating (Highest)");
 		Thread.sleep(2000);
-		WebElement show = driver.findElement(By.id("input-limit"));
 		
+		WebElement show = driver.findElement(By.id("input-limit"));
 		Select select2 = new Select(show);
 		select2.selectByVisibleText("100");
 		

@@ -39,11 +39,17 @@ public class WindowHandlesPractice {
 		
 		driver.switchTo().window(childWindow);
 		
+		
+		
 		WebElement find = driver.findElement(By.id("ember101"));
 		find.isDisplayed();
 		UtilityClass.screenShot(driver, "ChildLogo");
+		driver.close();
 		
-		driver.quit();
+		driver.switchTo().window(parentWindow);
+		driver.navigate().to("https://www.facebook.com/login/");
+		
+	//	driver.quit();
 		
 		
 		

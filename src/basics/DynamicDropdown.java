@@ -18,17 +18,17 @@ public class DynamicDropdown {
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 		driver.get("https://www.aa.com/homePage.do");
 		
-		// i need to find locator of UI Element for From element
+		// I need to find locator of UI Element for Form element
 		WebElement from = driver.findElement(By.id("reservationFlightSearchForm.originAirport"));
-		// we need to clear the existing value
+		// We need to clear the existing value
 		from.clear();
 		from.sendKeys("wash");
 		
 		// we are storing list of elements from dropdown into a list using
 		//driver.findElements method of selenium
+		
 		List<WebElement> fromAirports =driver.findElements(By.xpath("//ul[@id='ui-id-1']/li"));
 		System.out.println(fromAirports.size());
-		
 		// we are writting a for each loop to iterate through list and we are writting
 		// an if condition to get text of webelement from list and once condition meets
 		// we will write .click method to click on element.
@@ -38,11 +38,10 @@ public class DynamicDropdown {
 		}
 		
 		
-		
 		WebElement to = driver.findElement(By.id("reservationFlightSearchForm.destinationAirport"));
 		to.clear();
 		to.sendKeys("New");
-		
+	
 		List<WebElement> toAirports = driver.findElements(By.xpath("//ul[@id='ui-id-2']/li"));
 		System.out.println(toAirports.size());
 		for (WebElement element :toAirports ) {
@@ -63,8 +62,8 @@ public class DynamicDropdown {
 		// using JSExecutor we need to remember to pass proper format
 		// for example if date format is mm/dd/yyyy we have to pass this format
 		// if date format is mm-dd-yyyy then we have to pass this format
-		String depDate = "07/16/2021";// if format was july-16 then i should pass that format
-		String arrDate = "07/18/2021";
+		String depDate = "12/16/2021";// if format was july-16 then i should pass that format
+		String arrDate = "12/18/2021";
 		
 		// In order to automate Calendars in Selenium, one of the ways we can use
 		// JavaScriptExecutor

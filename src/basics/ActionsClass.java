@@ -10,7 +10,7 @@ import org.openqa.selenium.interactions.Actions;
 
 public class ActionsClass {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 
 
 		System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
@@ -25,21 +25,39 @@ public class ActionsClass {
 		Actions action = new Actions(driver);
 		// mouse over to an element
 		action.moveToElement(desktop).build().perform();
+		Thread.sleep(3000);
 		// right click on UI
 		//action.contextClick(desktop).build().perform();
 		// double click -- it has 2 options to perform
-		action.doubleClick(desktop).build().perform();
-		
+		WebElement myAccount = driver.findElement(By.xpath("//span[text()='My Account']"));
+		action.doubleClick(myAccount).build().perform();
+		Thread.sleep(3000);
 		
 		driver.navigate().to("http://demo.guru99.com/test/drag_drop.html");
 		
 		// for drag and drop we need two things:
 		//1. source WebElement
 		//2. Target WebElement
+		
+		
 		WebElement source = driver.findElement(By.xpath("(//li[@id='fourth']/a)[1]"));
 		WebElement target = driver.findElement(By.xpath("//ol[@id='amt7']"));
 		
 		action.dragAndDrop(source, target).build().perform();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
