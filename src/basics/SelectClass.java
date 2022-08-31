@@ -9,13 +9,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class SelectClass {
 
 	public static void main(String[] args) throws InterruptedException {
 
 
-		System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
+		//System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+		
+		WebDriver driver = WebDriverManager.chromedriver().create();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -36,6 +39,8 @@ public class SelectClass {
 		Select select = new Select(sortBy);
 		select.selectByVisibleText("Price (High > Low)");
 		Thread.sleep(5000);
+		select.getOptions();
+		System.out.println(select);
 		
 //		select.selectByValue("http://tek-school.com/retail/index.php?route=product/category&path=20&sort=p.sort_order&order=ASC");
 //		Thread.sleep(5000);

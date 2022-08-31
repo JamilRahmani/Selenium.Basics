@@ -8,13 +8,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class ActionsClass {
 
 	public static void main(String[] args) throws InterruptedException {
 
 
-		System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
+		//ExplicitWait Code
+//		WebDriverWait wait = new WebDriverWait(driver,30);
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(text(),'COMPOSE')]")));
+		
+		WebDriver driver = WebDriverManager.chromedriver().create();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

@@ -2,8 +2,12 @@ package basics;
 
 import java.util.concurrent.TimeUnit;
 
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class ChromeBrowser {
 	
@@ -16,18 +20,18 @@ public class ChromeBrowser {
 		// for windows :"WebDriver.chrome.driver", "C:\\chromedriver.exe"
 		// for mac: "WebDriver.chrome.driver", "chromedriver"
 		// path should be like this rootfolder\\folder\\folder\\chromedriver.exe
-		System.setProperty("WebDriver.chrome.driver", "C:\\chromedriver.exe");
+		// System.setProperty("WebDriver.chrome.driver", "C:\\chromedriver.exe");
 		
 		
 		// we need to create a reference to WebDriver interface and create object of ChromeDriver. 
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = WebDriverManager.chromedriver().create();
 		
 		
 		// we need to set some properties 
 		// This line of code will open chrome browser to maximum size. 
 		driver.manage().window().maximize();
 		//we need to tell the driver to wait for certain amount of time so web page is loaded
-		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 		// cookies?
 		//driver.manage().deleteAllCookies();
 		

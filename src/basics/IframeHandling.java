@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class IframeHandling {
 
 	public static void main(String[] args) {
@@ -14,7 +16,7 @@ public class IframeHandling {
 		
 		System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
 		
-		WebDriver driver = new ChromeDriver();
+		WebDriver driver = WebDriverManager.chromedriver().create();
 		
 		driver.manage().window().maximize();
 		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);

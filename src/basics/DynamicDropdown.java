@@ -1,5 +1,6 @@
 package basics;
 import java.util.List;
+
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -37,11 +38,12 @@ public class DynamicDropdown {
 				element.click();
 		}
 		
-		
+		//dynamic drop down
 		WebElement to = driver.findElement(By.id("reservationFlightSearchForm.destinationAirport"));
 		to.clear();
 		to.sendKeys("New");
 	
+		
 		List<WebElement> toAirports = driver.findElements(By.xpath("//ul[@id='ui-id-2']/li"));
 		System.out.println(toAirports.size());
 		for (WebElement element :toAirports ) {

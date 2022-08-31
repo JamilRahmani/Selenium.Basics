@@ -1,4 +1,5 @@
-package Practice;
+package basics;
+
 
 import java.util.concurrent.TimeUnit;
 
